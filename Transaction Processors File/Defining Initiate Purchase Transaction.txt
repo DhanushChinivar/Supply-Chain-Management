@@ -3,8 +3,7 @@ The code for Initiate Purchase Transaction is as follows:
 
  /**
  * Initiate PO from one trader to another
- * @param {org.supplychain.network.InitiatePO} InitiatePO - the InitiatePO is to b
-e processed
+ * @param {org.supplychain.network.InitiatePO} InitiatePO - the InitiatePO is to be processed
  * @transaction
  */
 
@@ -23,8 +22,7 @@ e processed
  order.orderStatus = 'INITIATED';
  order.orderer = me;
  order.vendor = InitiatePO.vendor;
- return getAssetRegistry(order.getFullyQualifiedType()).then(function (assetRegist
-ry) {
+ return getAssetRegistry(order.getFullyQualifiedType()).then(function (assetRegistry) {
 
  return assetRegistry.add(order);
 
