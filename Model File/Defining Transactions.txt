@@ -1,0 +1,18 @@
+The code for defining the transactions is as follows:
+
+ transaction InitiatePO {
+ o String orderId
+ o Commodity[] itemList
+ o Double orderTotalPrice optional
+ --> Trader orderer optional
+ --> Trader vendor
+ }
+
+
+ transaction TransferCommodity {
+ --> Commodity commodity
+ --> Trader issuer
+ --> Trader newOwner
+ --> PO purchaseOrder optional
+ o Address shipperLocation
+ }
